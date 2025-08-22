@@ -1,6 +1,5 @@
 import express from 'express';
 import { transactions } from "./data";
-import { mongoConnect } from '../src/database/MongooseConnection';
 import { TransactionController } from "../src/controllers/transactionsController";
 import { TransactionService } from  "../src/service/transactionService";
 import { TransactionRepository } from "../src/repository/transactionRepository";
