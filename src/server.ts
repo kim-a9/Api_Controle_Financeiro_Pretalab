@@ -8,7 +8,7 @@ async function startServer() {
     await mongoConnect();
     console.log("✅ Database connected!");
     app.listen(port, () => {
-      console.log(`Server is running on http://localhost:${port}`);
+      console.log(`Server is running on ${port}`);
     });
   } catch (error) {
     console.error("Failed to start server:", error);
