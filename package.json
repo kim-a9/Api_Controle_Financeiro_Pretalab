@@ -2,7 +2,7 @@
   "name": "proj_nova_api_financeiro",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "directories": {
     "test": "tests"
   },
