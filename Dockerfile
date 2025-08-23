@@ -34,5 +34,5 @@ EXPOSE 8080
 
 # Define the command to run your application
 # Assuming your built JavaScript entry point is in dist/index.js (adjust as needed)
-CMD ["node", "/app/dist/server.js"]
+CMD ["node", "dist/server.js"]
 
