@@ -1,8 +1,8 @@
 import express from 'express';
 import { transactions } from "./data";
-import { TransactionController } from "../src/controllers/transactionsController";
-import { TransactionService } from  "../src/service/transactionService";
-import { TransactionRepository } from "../src/repository/transactionRepository";
+import { TransactionController } from "./controllers/transactionsController";
+import { TransactionService } from  "./service/transactionService";
+import { TransactionRepository } from "./repository/transactionRepository";
 
 const transactionRepository = new TransactionRepository();
 const transactionService = new TransactionService(transactionRepository);
