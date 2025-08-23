@@ -41,7 +41,6 @@ jobs:
 
     env:
       MONGO_URL: ${{ secrets.MONGO_URL}}
-      PORT: ${{ secrets.PORT }}
 
     steps:
       - name: Checkout code ${{ matrix.node-version }}
@@ -72,7 +71,6 @@ jobs:
       id-token: "write"
     env:
       MONGO_URL: ${{ secrets.MONGO_URL}}
-      PORT: ${{ secrets.PORT }}
 
     steps:
       - name: Checkout
