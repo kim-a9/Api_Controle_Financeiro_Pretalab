@@ -1,5 +1,5 @@
 import app from "./index";
-import { mongoConnect } from "../src/database/MongooseConnection";
+import { mongoConnect } from "./database/MongooseConnection";
 
 const port = process.env.PORT || 3000;
 
