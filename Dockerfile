@@ -24,9 +24,10 @@ FROM node:20-slim
 WORKDIR /app
 
 # Copy only the necessary files from the build stage
-COPY --from=build /app/node_modules ./node_modules
-COPY --from=build /app/package*.json ./
-COPY --from=build /app/dist ./dist
+COPY --from=build /app .
+# COPY --from=build /app/node_modules ./node_modules
+# COPY --from=build /app/package*.json ./
+# COPY --from=build /app/dist ./dist
 
 # Expose the port your application listens on
 # Cloud Run expects your application to listen on the port specified by the PORT environment variable
