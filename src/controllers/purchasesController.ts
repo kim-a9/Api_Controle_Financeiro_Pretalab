@@ -17,7 +17,7 @@ export class PurchasesController {
         res.status(201).json({purchase});
     }
     public async GetPurchaseController(req: Request, res: Response): Promise<void> {
-        const purchases = await this.purchaseService.getPurchases(req.body);
+        const purchases = await this.purchaseService.getPurchases();
         res.status(201).json({purchases});
     }
 

@@ -1,19 +1,18 @@
 import { IPurchase, PurchaseModel } from "../database/MongoosePurchaseModel";
-import { Purchase } from "../../src/entities/Purchase";
 
 
 export class PurchaseRepository {
 
-    public async create(data: Purchase): Promise<Purchase> {
+    public async create(data: IPurchase): Promise<IPurchase> {
         const newPurchase = new PurchaseModel(data);
         return await newPurchase.save();
     };
 
-    public async getPurchases(data: Purchase[]): Promise<Purchase[] | null> {
+    public async getPurchases(): Promise<IPurchase[] | null> {
         return await PurchaseModel.find();
     };
 
-    public async getById(id: string): Promise<Purchase | null> {
+    public async getById(id: string): Promise<IPurchase | null> {
         return await PurchaseModel.findById(id);
     };
 
