@@ -1,5 +1,6 @@
-import { IPurchase } from "../database/MongoosePurchaseModel";
 import { PurchaseRepository } from "../repository/purchaseRepository";
+import { Purchase } from "../../src/entities/Purchase";
+
 
 export class PurchaseService {
     private purchaseRepository: PurchaseRepository;
@@ -8,13 +9,13 @@ export class PurchaseService {
         this.purchaseRepository = purchaseRepository;
     }
 
-    public async createPurchase(data: IPurchase): Promise<IPurchase> {
+    public async createPurchase(data: Purchase): Promise<Purchase> {
         return await this.purchaseRepository.create(data);
     }
-    public async getPurchases(data: IPurchase[]): Promise<IPurchase[] | null> {
+    public async getPurchases(data: Purchase[]): Promise<Purchase[] | null> {
         return await this.purchaseRepository.getPurchases(data);
     }
-    public async getPurchasesById(id: string): Promise<IPurchase | null> {
+    public async getPurchasesById(id: string): Promise<Purchase | null> {
         return await this.purchaseRepository.getById(id);
     }
 }

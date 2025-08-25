@@ -1,7 +1,7 @@
 import { Schema, model, Document } from 'mongoose';
 
 export const purchaseSchema: Schema = new Schema({
-    date: {type: Date, required: true},
+    date: {type: Date, default: Date.now},
     total: {type: String, required: true},
     items: {
         productId: Schema.Types.ObjectId,
@@ -11,12 +11,13 @@ export const purchaseSchema: Schema = new Schema({
     }
 });
 
+
 export interface IPurchase extends Document {
     id?: string;
-    date: Date;
+    date: string;
     total: number;
     items: {
-        productId: string, 
+        productId?: Schema.Types.ObjectId, 
         quantity: number,
         name: string,
         price: number,
