@@ -1,7 +1,7 @@
 import app from "./index";
 import { mongoConnect } from "./database/MongooseConnection";
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 async function startServer() {
   try {
