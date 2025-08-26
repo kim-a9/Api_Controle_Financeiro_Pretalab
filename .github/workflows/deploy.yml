@@ -40,7 +40,7 @@ jobs:
         node-version: [20.x]
 
     env:
-      MONGO_URL_TEST: ${{ secrets. MONGO_URL_TEST}}
+      MONGO_URL_TEST: mongodb://admin:password@localhost:27017
 
     steps:
       - name: Checkout code ${{ matrix.node-version }}
@@ -55,6 +55,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: MongoDB initialization
+        run: docker-compose up -d
+        
       - name: Run integration tests
         run: npm run test:integration
 
