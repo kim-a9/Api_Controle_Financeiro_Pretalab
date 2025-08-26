@@ -40,7 +40,7 @@ jobs:
         node-version: [20.x]
 
     env:
-      MONGO_URL: ${{ secrets.MONGO_URL}}
+      MONGO_URL_TEST: ${{ secrets. MONGO_URL_TEST}}
 
     steps:
       - name: Checkout code ${{ matrix.node-version }}
