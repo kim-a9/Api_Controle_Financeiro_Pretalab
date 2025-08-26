@@ -56,7 +56,7 @@ jobs:
         run: npm install
 
       - name: MongoDB initialization
-        run: docker-compose up -d
+        run: docker compose up -d
         
       - name: Run integration tests
         run: npm run test:integration
