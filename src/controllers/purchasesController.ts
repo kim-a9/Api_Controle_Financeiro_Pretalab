@@ -18,14 +18,14 @@ export class PurchasesController {
     }
     public async GetPurchaseController(req: Request, res: Response): Promise<void> {
         const purchases = await this.purchaseService.getPurchases();
-        res.status(201).json({purchases});
+        res.status(200).json({purchases});
     }
 
     public async GetPurchaseByIdController(req: Request, res: Response): Promise<void> {
         const { id } = req.params;
         const purchase = await this.purchaseService.getPurchasesById(id);
 
-        res.status(201).json({purchase});
+        res.status(200).json({purchase});
     }
 
 }

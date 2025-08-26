@@ -4,7 +4,7 @@ export const purchaseSchema: Schema = new Schema({
     date: {type: Date, default: Date.now},
     total: {type: String, required: true},
     items: {
-        productId: Schema.Types.ObjectId,
+        productId: {type: String, required: true},
         quantity: {type: Number, required: true},
         name: {type: String, required: true},
         price: {type: Number, required: true}
@@ -13,11 +13,11 @@ export const purchaseSchema: Schema = new Schema({
 
 
 export interface IPurchase extends Document {
-    id?: string;
+    id?: Schema.Types.ObjectId;
     date: string;
     total: number;
     items: {
-        productId?: Schema.Types.ObjectId, 
+        productId: string, 
         quantity: number,
         name: string,
         price: number,
