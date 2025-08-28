@@ -12,7 +12,7 @@ export class PurchaseService {
     public async createPurchase(data: IPurchase): Promise<IPurchase> {
         return await this.purchaseRepository.create(data);
     }
-    public async getPurchases(): Promise<IPurchase[] | null> {
+    public async getPurchases(): Promise<IPurchase[]> {
         return await this.purchaseRepository.getPurchases();
     }
     public async getPurchasesById(id: string): Promise<IPurchase | null> {

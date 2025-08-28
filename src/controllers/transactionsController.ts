@@ -20,5 +20,10 @@ export class TransactionController {
        
        res.status(200).json({transaction});
     };
+    public async GetTransactionsController(req: Request, res: Response): Promise<void> {
+       const transaction = await this.transactionService.getTransactions();
+       
+       res.status(200).json({transaction});
+    };
 
 };
