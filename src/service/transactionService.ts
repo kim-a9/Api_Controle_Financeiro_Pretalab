@@ -17,4 +17,8 @@ export class TransactionService {
         return await this.transactionRepository.getById(id);
     };
 
+     public async getTransactions(): Promise<ITransaction[]> {
+        return await this.transactionRepository.getAll();
+    };
+
 }

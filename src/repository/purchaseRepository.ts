@@ -8,7 +8,7 @@ export class PurchaseRepository {
         return await newPurchase.save();
     };
 
-    public async getPurchases(): Promise<IPurchase[] | null> {
+    public async getPurchases(): Promise<IPurchase[]> {
         return await PurchaseModel.find();
     };
 

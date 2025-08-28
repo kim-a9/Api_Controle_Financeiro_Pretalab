@@ -10,6 +10,9 @@ export class TransactionRepository {
     public async getById(id: string): Promise<ITransaction | null> {
         return await TransactionsModel.findById(id);
     };
+     public async getAll(): Promise<ITransaction[]> {
+        return await TransactionsModel.find();
+    };
 
 
 }
