@@ -30,6 +30,7 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.17.2",
+    "nock": "^14.0.10",
     "supertest": "^7.1.4"
   },
   "devDependencies": {
