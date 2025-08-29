@@ -35,7 +35,7 @@ describe('Purchase - integration', () => {
     });
 
     it('deve criar uma purchase e retornar 201', async () =>{
-        const res = await request(app).post('/purchases').send({
+        const res = await request(app).post('/checkout').send({
             date: "2024-07-28T14:45:12Z",
             total: 7850,
             items: {
