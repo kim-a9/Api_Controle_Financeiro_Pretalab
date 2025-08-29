@@ -9,7 +9,7 @@ export class PurchaseService {
         this.purchaseRepository = purchaseRepository;
     }
 
-    public async createPurchase(data: IPurchase): Promise<IPurchase> {
+    public async createPurchase(data: Omit<IPurchase, 'id'>): Promise<IPurchase> {
         return await this.purchaseRepository.create(data);
     }
     public async getPurchases(): Promise<IPurchase[]> {

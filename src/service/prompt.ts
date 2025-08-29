@@ -52,25 +52,3 @@ export const aiPromptData = async (prompt: string) => {
     };
 };
 
-
-
-// import {ChatInterationRepository} from "../repository/chatInterationRepository";
-// import { IChatInteration } from "../database/MongooseInterationModel";
-
-
-// export class InterationAiService {
-//     // private genAi: GoogleGenAI;
-//     private chatRepository: ChatInterationRepository;
-
-//     constructor(chatRepository: ChatInterationRepository ){
-//         this.chatRepository = chatRepository;
-//     }
-
-//     public async generatePrompt(userId: string, prompt: IChatInteration): Promise<IChatInteration>{
-//         return await this.chatRepository.createChat(userId, {prompt});
-//     }
-//     // (...)
-
-
-// }
-

@@ -1,5 +1,4 @@
 import express from 'express';
-import { transactions } from "./data";
 import { TransactionController } from "./controllers/transactionsController";
 import { PurchasesController } from "./controllers/purchasesController";
 import { ProductsController } from "./controllers/productsController";
@@ -20,7 +19,7 @@ const productRepository = new ProductRepository();
 
 const transactionService = new TransactionService(transactionRepository);
 const purchaseService = new PurchaseService(purchaseRepository);
-const productService = new ProductService(productRepository);
+const productService = new ProductService();
 
 const transactionController = new TransactionController(transactionService);
 const purchaseController = new PurchasesController(purchaseService);
@@ -36,9 +35,6 @@ app.get("/", (req, res) => {
   res.json({ message: "Transactions API v1" });
 });
 
-app.get("/transactions", (req, res) => {
-  res.json({ transactions });
-});
 
 app.post("/transactions", (req, res) => 
 transactionController.CreateTransactionController(req, res));
@@ -55,13 +51,10 @@ app.get("/purchases", (req, res) =>
 app.get("/purchases/:id", (req, res) => 
 purchaseController.GetPurchaseByIdController(req,res));
 
-app.post("/purchases", (req, res) => 
+app.post("/checkout", (req, res) => 
 purchaseController.CreatePurchaseController(req,res));
 
-app.post("/products", (req, res) =>
-productController.CreateProductController(req, res));
-
-app.get("/products", (req, res) =>
+app.get("/products", (req, res) => 
 productController.GetProductsController(req, res));
 
 app.post("/ai", async (req, res) => aiChat(req, res));

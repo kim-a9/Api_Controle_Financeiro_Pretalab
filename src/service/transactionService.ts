@@ -22,3 +22,5 @@ export class TransactionService {
     };
 
 }
+
+export { TransactionRepository };

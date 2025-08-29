@@ -36,11 +36,9 @@ export const financialAssistant = async (prompt: any[]) => {
   const transactions: ITransaction[] = await transactionService.getTransactions();
   const purchase: IPurchase[] = await purchaseService.getPurchases();
 
-  const systemInstruction = `Você é um assistente financeiro e vai analisar os dados informados, 
-  conforme a solicitaçao do usuário. Os dados informados estão dentro de um array e possuem, 
-  valor, categoria, data, descrição e tipo (entrada ou saída). Os dados informados são:`;
+  const systemInstruction = 'Qual foi meu maior gasto este mês?';
 
-  const data = [... transactions, ... purchase]
+  const data = [...transactions, ...purchase]
 
   const model = await ai.models.generateContent({
     model: "gemini-2.5-flash",
@@ -53,25 +51,3 @@ export const financialAssistant = async (prompt: any[]) => {
   return model;
 };
 
-
-
-
-
-
-
-
-
-
-
-
-// import { GoogleGenAI } from "@google/genai";
-// import dotenv from "dotenv";
-
-// export const ai = new GoogleGenAI({
-//     apiKey: process.env.GEMINI_API_KEY
-// });
-
-// export const generateText = async (prompt: string) => ai.models.generateContent({
-//         model: 'gemini-2.5-flash',
-//         contents: prompt,
-//     });
